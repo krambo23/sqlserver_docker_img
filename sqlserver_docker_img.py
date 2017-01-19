@@ -22,7 +22,7 @@ def list_docker_id() :
 	os.system("docker ps -a")
 
 def get_docker_id() :
-	docker_id = input("Input Docker ID : ")
+	docker_id = input("Input Container ID : ")
 	return docker_id
 
 def start_docker_image() :
