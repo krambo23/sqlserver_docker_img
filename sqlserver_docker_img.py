@@ -31,29 +31,50 @@ def start_docker_image() :
 def stop_docker_image() :
 	os.system("docker stop " + get_docker_id())
 
+def install_homebrew() :
+	os.system('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
+	os.system("brew update")
+
+def install_openssl() :
+	os.system("brew install openssl")
+	os.system("ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/")
+	os.system("  ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/")
+
+def sqlgui() :
+	os.system("open -a Visual\ Studio\ Code")
+
 os.system("open -a Docker")
-#print("Please ensure Docker is launched")
 print("1. Install SQL Server Image")
 print("2. Install mssql")
-print("3. Run Image (1st Time)")
-print("4. Launch CLI")
-print("5. Run Image")
-print("6. Stop Image")
+print("3. Install Homebrew")
+print("4. Install OpenSSL")
+print("5. Run Image (1st Time)")
+print("6. Launch CLI")
+print("7. Launch GUI")
+print("8. Run Image")
+print("9. Stop Image")
 print("0. Exit")
 
 user_choice = int(input("Input Choice : "))
+
 if (user_choice == 1) :
 	download_docker_image()
 elif (user_choice == 2) :
 	download_sql_cli()
-elif (user_choice == 3) :
-	start_sql()
+elif (user_choice == 3) : 
+	install_homebrew()
 elif (user_choice == 4) :
-	sqlcli()
+	install_openssl()
 elif (user_choice == 5) :
+	start_sql()
+elif (user_choice == 6) :
+	sqlcli()
+elif (user_choice == 7) :
+	sqlgui()
+elif (user_choice == 8) :
 	list_docker_id()
 	start_docker_image()
-elif (user_choice == 6) :
+elif (user_choice == 9) :
 	list_docker_id()
 	stop_docker_image()
 else :
