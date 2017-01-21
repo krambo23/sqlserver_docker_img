@@ -7,7 +7,7 @@ def download_sql_cli() :
 	os.system("npm install -g sql-cli")
 
 def get_password() :
-	password = input("Input Password : ")
+	password = input("Input SQL Password : ")
 	return password
 
 password = get_password()
@@ -44,6 +44,7 @@ def sqlgui() :
 	os.system("open -a Visual\ Studio\ Code")
 
 os.system("open -a Docker")
+print("Docker Launched")
 print("1. Install SQL Server Image")
 print("2. Install mssql")
 print("3. Install Homebrew")
