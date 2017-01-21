@@ -31,7 +31,8 @@ def start_docker_image() :
 def stop_docker_image() :
 	os.system("docker stop " + get_docker_id())
 
-print("Please ensure Docker is launched")
+os.system("open -a Docker")
+#print("Please ensure Docker is launched")
 print("1. Install SQL Server Image")
 print("2. Install mssql")
 print("3. Run Image (1st Time)")
