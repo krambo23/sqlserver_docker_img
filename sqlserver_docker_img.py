@@ -45,38 +45,39 @@ def sqlgui() :
 
 os.system("open -a Docker")
 print("Docker Launched")
-print("1. Install SQL Server Image")
-print("2. Install mssql")
-print("3. Install Homebrew")
-print("4. Install OpenSSL")
-print("5. Run Image (1st Time)")
-print("6. Launch CLI")
-print("7. Launch GUI")
-print("8. Run Image")
-print("9. Stop Image")
-print("0. Exit")
+user_choice = 99
+while (user_choice != 0) :
+	print("1. Install SQL Server Image")
+	print("2. Install mssql")
+	print("3. Install Homebrew")
+	print("4. Install OpenSSL")
+	print("5. Run Image (1st Time)")
+	print("6. Launch CLI")
+	print("7. Launch GUI")
+	print("8. Run Image")
+	print("9. Stop Image")
+	print("0. Exit")
 
-user_choice = int(input("Input Choice : "))
-
-if (user_choice == 1) :
-	download_docker_image()
-elif (user_choice == 2) :
-	download_sql_cli()
-elif (user_choice == 3) : 
-	install_homebrew()
-elif (user_choice == 4) :
-	install_openssl()
-elif (user_choice == 5) :
-	start_sql()
-elif (user_choice == 6) :
-	sqlcli()
-elif (user_choice == 7) :
-	sqlgui()
-elif (user_choice == 8) :
-	list_docker_id()
-	start_docker_image()
-elif (user_choice == 9) :
-	list_docker_id()
-	stop_docker_image()
-else :
-	print("Goodbye ;-P")
+	user_choice = int(input("Input Choice : "))
+	if (user_choice == 1) :
+		download_docker_image()
+	elif (user_choice == 2) :
+		download_sql_cli()
+	elif (user_choice == 3) : 
+		install_homebrew()
+	elif (user_choice == 4) :
+		install_openssl()
+	elif (user_choice == 5) :
+		start_sql()
+	elif (user_choice == 6) :
+		sqlcli()
+	elif (user_choice == 7) :
+		sqlgui()
+	elif (user_choice == 8) :
+		list_docker_id()
+		start_docker_image()
+	elif (user_choice == 9) :
+		list_docker_id()
+		stop_docker_image()
+	else :
+		print("Goodbye ;-P")
